@@ -1,3 +1,4 @@
+/*Variables globales para el tamaño de las fuentes y paleta de colores*/
 :root{
     --white: #FFFFFF;
     --black: #000000;
@@ -9,90 +10,136 @@
     --md: 1.6rem;
     --lg: 1.8rem;
 }
+/*Reiniciar los estilos del navegador y todas las etiquetas*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/*Tamaño de fuente del html*/
 html{
     font-size:62.5%;
 }
+/*Tipo de fuente del body*/
 body{
     font-family: 'Quicksand', sans-serif;
 }
+/*Estilos del contenedor padre de la barra de navegación*/
 nav{
+    /*display flex para poder posicionar a los contenedores de la izquierda y derecha*/
     display: flex;
+    /*Elementos posicionados a los extremos del contenedor*/
     justify-content: space-between;
+    /*espacio de 2 px a los lados*/
     padding: 0 2rem;
+    /*tamaño completo del contendor a lo ancho*/
     width: 100%;
+    /*60px de largo*/
     height: 6rem;
+    /*Color y estilo de la parte inferior del bore*/
     border-bottom: 1px solid var(--very-light-pink);
 }
+/*Estilo de todas las etiquetas*/
 a{
+    /*Quitar la linea de abajo*/
     text-decoration: none;
+    /*Color de la fuente*/
     color: var(--very-light-pink);
+    /*Color de los bordes del contenedor de los links*/
     border: 1px solid var(--white);
     border-radius: 10px;
     padding:0.7rem;
 }
+/*Estilos de estado hover de los links*/
 a:hover{
+    /*Color de las letras y del borde*/
     color: var(--hospital-green);
     border: 1px solid var(--hospital-green);
 }
+/*Quitar los bullets por defecto que vienen en las listas*/
 li{
     list-style: none;
 }
+/*Quitar el icono de menú (para desktop)*/
 .menu{
     display: none;
 }
+/*Tamaño  del logo*/
 .logo{
     width: 12rem;
 }
+/*Estilos de las LISTAS de los contenedores de izquierda y derecha*/
 .navbar-left ul,
 .navbar-right ul{ 
     display:flex;
+    /*Centrar los elementos verticalmente al centro*/
     align-items: center;
+    /*Espacio entre columnas de 30px*/
     gap:3rem;
 }
+/*Estilos de los contenedores de izquierda y derecha*/
 .navbar-left,.navbar-right{
+    /*Display flex para re-posicionar los elementos*/
     display: flex;
+    /*Centrar los elementos verticalmente al centro*/
     align-items: center;
+    /*Margen superior de 10px*/
     margin-top: 1rem;
+    /*Margen inferior de 10px*/
     margin-bottom: 1rem;
+    /*Espacio entre contenedores de 30px*/
     gap:3rem;
+    /*Letra pequeña*/
     font-size: var(--rm);
 }
+/*Estilos del email*/
 .navbar-email{
     color:var(--very-light-pink);
     font-family: var(--rm);
 }
+/*Estilos de la imagen del carrito de compras*/
 .navbar-shopping-cart{
+    /*position relative para poder moverlo por el contenedor padre*/
     position: relative;
+    /*10px hacia abajo*/
     bottom:10;
 }
+/*Estilos del contenedor con el "2"*/
 .navbar-shopping-cart div{
+    /*dimensiones*/
     width: 15px;
     height: 15px;
     background-color: var(--hospital-green);
     font-size: var(--rm);
     font-weight: bold;
+    /*Redondeado del contenedor*/
     border-radius: 50%;
+    /*Hacer que pierda su espacio físico*/
     position: absolute;
+    /*Posición en la parte superior derecha del carrito*/
     top: -6px;
     right:-5px;
+    /*texto alineado al centro (el número 2)*/
     text-align: center;
 }
+/*EStilos aplicados para pantallas de 0 a 640px*/
 @media(max-width: 640px){
+    /*Mostrar el ícono de menú en mobile*/
     .menu{
-        display: block;
+        /*No importa el tipo de display que se le ponga, solo hay que ponerle uno para que pueda
+        mostrarse en pantallla*/
+        display:block;
         width: 3rem;
     }
+    /*Eliminar la lista del contenedor de la izquierda del navbar*/
     .navbar-left ul{
         display: none;
     }
+    /*Eliminar el correo*/
     .navbar-email{
         display: none;
     }
+    /*Eliminar los márgenes de arriba de los contenedores de la izquierda y la derecha*/
     .navbar-left,.navbar-right{
         margin-top: 0;
     }

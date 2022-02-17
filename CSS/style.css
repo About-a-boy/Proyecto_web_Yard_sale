@@ -1,3 +1,4 @@
+/*Variables globales para el tamaño de las fuentes y paleta de colores*/
 :root{
     --white: #FFFFFF;
     --black: #000000;
@@ -9,56 +10,76 @@
     --md: 1.6rem;
     --lg: 1.8rem;
 }
+/*Reiniciar todos los estilos de las etiquetas y el navegador*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/*Tamaño de la fuente de html, para poder usar las medidas rem*/
 html{
     font-size:62.5%;
 }
+/*estilo de fuentes*/
 body{
     font-family: 'Quicksand', sans-serif;
 }
 .main-container{
+    /*Display grid para manejar los elementos como una tabla*/
     display: grid;
+    /*Alinear los elementos hijos al centro del contenedor*/
     place-content: center;
+    /*Numero automático de columnas ajustado al tamaño de la página y un espacio de 240px
+    entre cada columna*/
     grid-template-columns:repeat(auto-fill,24rem);
+    /*Espacio de 26px entre filas y columnas*/
     gap: 2.6rem;
 }
 .product-card{
+    /*Ancho del contenedor para las tarjetas*/
     width: 24rem;
 }
+/*Estilos de la imagen del producto*/
 .product-card img{
+    /*Ancho y largo*/
     width: 24rem;
     height: 24rem;
+    /*Redondeado de esquinas*/
     border-radius: 20px;
+    /*Hacer que la imágen no se "apachurre" xDxd*/
     object-fit: cover;
 }
+/*Estilos del contenedor para el nombre y el precio del producto*/
 .product-info{
+    /*Display flex para manejar los elementos*/
     display: flex;
+    /*Elementos colocados a los lados del contenedor*/
     justify-content: space-between;
+    /*Centrar verticalmente los elementos al centro*/
     align-items: center;
-}
-.product-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /*Margen superior de 12px*/
     margin-top: 1.2rem;
 }
+/*Definir los estilos de la primer etiqueta p, contenida en un div, contenida en la clase product-info*/
 .product-info div p:nth-child(1){
+    /*Grosor ancho de la fuente*/
     font-weight: bold;
+    /*Tamaño mediano de fuente*/
     font-size: var(--md);
+    /*margen inferior de 4px*/
     margin-bottom: 0.4rem;
 }
+/*Definir los estilos de la segunda etiqueta p, contenida en un div, contenida en la clase product-info*/
 .product-info div p:nth-child(2){
     font-size: var(--sm);
     color: var(--very-light-pink);
 }
+/*Dimansiones de la imagen del carrito (40x40px)*/
 .product-info figure img{
     width:4rem ;
     height:4rem;
 }
+/*EStilos que se aplicarán de 0 a 640px*/
 @media(max-width:640px){
     .main-container{
         grid-template-columns:repeat(auto-fill,14rem);

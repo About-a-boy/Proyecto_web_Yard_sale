@@ -1,5 +1,5 @@
-
-    :root {
+/*Variables globales para el tamaño de las fuentes y paleta de colores*/
+:root {
         --white: #FFFFFF;
         --black: #000000;
         --very-light-pink: #C7C7C7;
@@ -9,74 +9,100 @@
         --md: 16px;
         --lg: 18px;
       }
-      body {
+/*Estilos del margin, tipo de fuente y sin márgenes*/
+body {
         margin: 0;
         font-family: 'Quicksand', sans-serif;
       }
-      .product-detail {
+/*Estilos del contenedor padre de los productos*/
+.product-detail {
         width: 360px;
         padding: 24px;
+        /*Evitar overflow de los elementos*/
         box-sizing: border-box;
         position: absolute;
         right: 0;
       }
-      .title-container {
+.title-container {
         display: flex;
       }
-      .title-container img {
+/*Estilos del ícono "<"*/
+.title-container img {
+        /*Rotar el ícono para que apunte hacia la izquierda*/
         transform: rotate(180deg);
         margin-right: 14px;
       }
-      .title {
+.title {
         font-size: var(--lg);
         font-weight: bold;
       }
-      .order {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 16px;
-        align-items: center;
-        background-color: var(--text-input-field);
-        margin-bottom: 24px;
-        border-radius: 8px;
-        padding: 0 24px;
-      }
-      .order p:nth-child(1) {
+/*Estilos del contenedor para el total del pedido*/
+.order {
+    /*Display grid para manejar los elementos como una tabla*/
+    display: grid;
+    /*Generar columnas automáticas*/
+    grid-template-columns:auto 1fr;
+    /*Espacio de 16 px entre renglones y columnas*/
+    gap: 16px;
+    /*alinear los elementos en el centro verticalmente*/
+    align-items: center;
+    background-color: var(--text-input-field);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    /*24px de espacio a los lados*/
+    padding: 0 24px;
+}
+/*Estilos al primer elemento del contenedor p en la clase order*/
+.order p:nth-child(1) {
+        /*Redefinir el display para hacerlo en columnas*/
         display: flex;
         flex-direction: column;
       }
-      .order p span:nth-child(1) {
-        font-size: var(--md);
-        font-weight: bold;
+.order p span:nth-child(1) {
+  /*tamaño de fuente y grosor de las letras*/
+  font-size: var(--md);
+  font-weight: bold;
       }
-      .order p:nth-child(2) {
+/*Estilos del segundo elemento "p" en la clase order*/
+.order p:nth-child(2) {
+        /*Texto alineado a la derecha del contenedor*/
         text-align: end;
+        /*Grosor de la fuente*/
         font-weight: bold;
       }
-      .shopping-cart {
+/*Estilos al contenedor de la orden*/
+.shopping-cart {
         display: grid;
+        /*Columnas automáticas ajustadas al contenedor para cada elemento*/
         grid-template-columns: auto 1fr auto auto;
+        /*Espacio entre columnas de*/
         gap: 16px;
         margin-bottom: 24px;
         align-items: center;
       }
-      .shopping-cart figure {
-        margin: 0;
-      }
-      .shopping-cart figure img {
+.shopping-cart figure {
+  margin: 0;
+}
+/*Estilos de la imágen del producto (bicicleta)*/
+.shopping-cart figure img {
+        /*Dimensiones*/
         width: 70px;
         height: 70px;
+        /*Redondeado de los bordes*/
         border-radius: 20px;
+        /*Ajustar la imágen*/
         object-fit: cover;
       }
-      .shopping-cart p:nth-child(2) {
+/*estilos de textos de precio y artículo*/
+.shopping-cart p:nth-child(2) {
         color: var(--very-light-pink);
       }
-      .shopping-cart p:nth-child(3) {
+.shopping-cart p:nth-child(3) {
         font-size: var(--md);
         font-weight: bold;
       }
-      .primary-button {
+/*EStilos para el botón de chekout*/
+.primary-button {
         background-color: var(--hospital-green);
         border-radius: 8px;
         border: none;
@@ -87,7 +113,8 @@
         font-weight: bold;
         height: 50px;
       }
-      @media (max-width: 640px) {
+/*mediaqueries para el responsive-design*/
+@media (max-width: 640px) {
         .product-detail {
           width: 100%;
         }
